@@ -1,8 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-sans'
+})
 
 export const metadata: Metadata = {
   title: 'Colégio Roberto Simonsen - Notícias e Eventos',
@@ -17,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.variable}>{children}</body>
+      <body className={`${poppins.variable} font-sans`}>{children}</body>
     </html>
   )
 }

@@ -46,6 +46,11 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
+            <Link href="/login">
+              <Button variant="outline" size="sm" className="ml-2">
+                Área Admin
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -73,6 +78,13 @@ export function Header() {
                   {item.name}
                 </Link>
               ))}
+              <Link href="/login" onClick={() => setMobileMenuOpen(false)}>
+                <div className="px-4 py-3">
+                  <Button variant="outline" size="sm" className="w-full">
+                    Área Admin
+                  </Button>
+                </div>
+              </Link>
             </div>
           </div>
         )}

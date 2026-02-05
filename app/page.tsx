@@ -2,6 +2,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { PostList } from '@/components/blog/PostList'
 import Link from 'next/link'
 import { FileText, Image, Calendar, ArrowRight } from 'lucide-react'
 
@@ -95,6 +96,39 @@ export default function Home() {
                   </Card>
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Latest News Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                  Últimas Notícias
+                </h2>
+                <p className="text-gray-600">
+                  Confira as novidades mais recentes do colégio
+                </p>
+              </div>
+              <Link href="/noticias">
+                <Button variant="outline" className="hidden md:flex items-center gap-2">
+                  Ver todas
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+
+            <PostList limit={3} showEmptyState={false} />
+
+            <div className="text-center mt-8 md:hidden">
+              <Link href="/noticias">
+                <Button variant="outline" className="items-center gap-2">
+                  Ver todas as notícias
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
